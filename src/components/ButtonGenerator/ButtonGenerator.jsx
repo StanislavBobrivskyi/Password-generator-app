@@ -1,13 +1,11 @@
 import React from 'react';
 
-export function ButtonGenerator() {
-  const generatePassword = () => {
-    // Додамо логіку генерації паролю тут
-  };
-
+export function ButtonGenerator({ onClick }) {
   return (
     <div>
-      <button onClick={generatePassword}>Generate Password</button>
+      <button type="button" onClick={onClick}>
+        Generate Password
+      </button>
     </div>
   );
 }

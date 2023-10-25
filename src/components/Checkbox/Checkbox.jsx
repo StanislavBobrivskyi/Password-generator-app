@@ -1,19 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export function Checkbox({ label }) {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
-
+export function Checkbox({ label, field }) {
   return (
     <div>
       <label>
         <input
           type="checkbox"
-          checked={isChecked}
-          onChange={handleCheckboxChange}
+          name={field.name}
+          checked={field.value}
+          onChange={field.onChange}
         />
         {label}
       </label>
