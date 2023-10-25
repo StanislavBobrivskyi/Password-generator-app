@@ -1,3 +1,5 @@
+import React from 'react';
+import { PasswordGenerator } from './PasswordGenerator/PasswordGenerator';
 export const App = () => {
   return (
     <div
@@ -10,7 +12,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      Password generator App
+      <PasswordGenerator></PasswordGenerator>
     </div>
   );
 };
