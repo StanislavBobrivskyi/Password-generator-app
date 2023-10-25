@@ -59,16 +59,22 @@ export function PasswordGenerator() {
     setGeneratedPassword(newPassword);
   };
 
-  const handleCopyToClipboard = text => {
-    const passwordText = typeof text === 'string' ? text : JSON.stringify(text);
-    navigator.clipboard
-      .writeText(passwordText)
-      .then(() => {
-        toast.success('Пароль скопійовано у буфер обміну');
-      })
-      .catch(error => {
-        toast.error(`Помилка копіювання: ${error.message}`);
-      });
+  //   const handleCopyToClipboard = value => {
+  //     navigator.clipboard
+  //       .writeText(value)
+  //       .then(() => {
+  //         toast.success('Пароль скопійовано у буфер обміну');
+  //         console.log(.textContent);
+  //       })
+  //       .catch(error => {
+  //         toast.error(`Помилка копіювання: ${error.message}`);
+  //       });
+  //   };
+  const handleCopyToClipboard = () => {
+    const input = document.getElementById('password-input');
+    input.select();
+    document.execCommand('copy');
+    toast.success('Пароль скопійовано у буфер обміну');
   };
 
   return (
