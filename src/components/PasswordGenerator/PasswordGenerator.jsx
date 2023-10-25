@@ -97,7 +97,7 @@ export function PasswordGenerator() {
             passwordLength={passwordLength}
             setPasswordLength={setPasswordLength}
           />
-          // Оновлений код для компонента Checkbox
+
           <Checkbox
             label="Uppercase Letters"
             field={{
