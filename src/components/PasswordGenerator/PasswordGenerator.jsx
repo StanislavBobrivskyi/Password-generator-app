@@ -7,7 +7,7 @@ import { Formik, Field, Form } from 'formik';
 
 export function PasswordGenerator() {
   const [generatedPassword, setGeneratedPassword] = useState('');
-  const [passwordLength, setPasswordLength] = useState(8);
+  const [passwordLength, setPasswordLength] = useState(12);
   const [includeLowercase, setIncludeLowercase] = useState(false);
   const [includeUppercase, setIncludeUppercase] = useState(false);
   const [includeNumbers, setIncludeNumbers] = useState(false);
@@ -61,7 +61,7 @@ export function PasswordGenerator() {
       <Formik
         initialValues={{
           password: '',
-          passwordLength: 8,
+          passwordLength: 12,
           includeLowercase: false,
           includeUppercase: false,
           includeNumbers: false,
@@ -72,6 +72,7 @@ export function PasswordGenerator() {
           setIncludeUppercase(values.includeUppercase);
           setIncludeNumbers(values.includeNumbers);
           setIncludeSpecialCharacters(values.includeSpecialCharacters);
+          setPasswordLength(values.passwordLength);
 
           const newPassword = generatePassword(values.passwordLength, {
             includeLowercase: values.includeLowercase,

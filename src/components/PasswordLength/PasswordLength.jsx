@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-export function PasswordLength() {
-  const [length, setLength] = useState(8); // Початкова довжина паролю 8 символів
-
+export function PasswordLength({ passwordLength, setPasswordLength }) {
   const handleLengthChange = event => {
-    setLength(event.target.value);
+    const newLength = event.target.value;
+    setPasswordLength(newLength);
   };
 
   return (
     <div>
-      <label>Password Length: {length}</label>
+      <label>Password Length: {passwordLength}</label>
       <input
         type="range"
         min="8"
         max="16"
-        value={length}
+        value={passwordLength}
         onChange={handleLengthChange}
       />
     </div>
