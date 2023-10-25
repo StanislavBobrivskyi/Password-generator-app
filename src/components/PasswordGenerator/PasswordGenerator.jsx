@@ -4,6 +4,9 @@ import { Checkbox } from '../Checkbox/Checkbox';
 import { PasswordStrength } from '../PasswordStrength/PasswordStrength';
 import { ButtonGenerator } from '../ButtonGenerator/ButtonGenerator';
 import { Formik, Field, Form } from 'formik';
+import { FaCopy } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function PasswordGenerator() {
   const [generatedPassword, setGeneratedPassword] = useState('');
@@ -56,6 +59,18 @@ export function PasswordGenerator() {
     setGeneratedPassword(newPassword);
   };
 
+  const handleCopyToClipboard = text => {
+    const passwordText = typeof text === 'string' ? text : JSON.stringify(text);
+    navigator.clipboard
+      .writeText(passwordText)
+      .then(() => {
+        toast.success('Пароль скопійовано у буфер обміну');
+      })
+      .catch(error => {
+        toast.error(`Помилка копіювання: ${error.message}`);
+      });
+  };
+
   return (
     <div>
       <Formik
@@ -92,7 +107,11 @@ export function PasswordGenerator() {
               name="password"
               readOnly
               value={generatedPassword}
+              id="password-input"
             />
+            <button type="button" onClick={handleCopyToClipboard}>
+              <FaCopy />
+            </button>
           </div>
           <PasswordLength
             passwordLength={passwordLength}
@@ -136,6 +155,7 @@ export function PasswordGenerator() {
           <ButtonGenerator onClick={handleGeneratePasswordClick} />
         </Form>
       </Formik>
+      <ToastContainer />
     </div>
   );
 }
