@@ -59,17 +59,6 @@ export function PasswordGenerator() {
     setGeneratedPassword(newPassword);
   };
 
-  //   const handleCopyToClipboard = value => {
-  //     navigator.clipboard
-  //       .writeText(value)
-  //       .then(() => {
-  //         toast.success('Пароль скопійовано у буфер обміну');
-  //         console.log(.textContent);
-  //       })
-  //       .catch(error => {
-  //         toast.error(`Помилка копіювання: ${error.message}`);
-  //       });
-  //   };
   const handleCopyToClipboard = () => {
     const input = document.getElementById('password-input');
     input.select();
