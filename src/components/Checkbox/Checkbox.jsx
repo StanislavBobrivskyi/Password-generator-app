@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { CheckBoxWrapper } from './Checkbox.styled';
 export function Checkbox({ label, field }) {
   return (
-    <div>
+    <CheckBoxWrapper>
       <label>
         <input
           type="checkbox"
@@ -12,6 +12,6 @@ export function Checkbox({ label, field }) {
         />
         {label}
       </label>
-    </div>
+    </CheckBoxWrapper>
   );
 }

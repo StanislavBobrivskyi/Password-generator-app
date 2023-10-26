@@ -7,6 +7,7 @@ import { Formik, Field, Form } from 'formik';
 import { FaCopy } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Wrapper, CheckBoxWrapper } from './PasswordGenerator.styled';
 
 export function PasswordGenerator() {
   const [generatedPassword, setGeneratedPassword] = useState('');
@@ -67,7 +68,7 @@ export function PasswordGenerator() {
   };
 
   return (
-    <div>
+    <Wrapper>
       <Formik
         initialValues={{
           password: '',
@@ -113,44 +114,46 @@ export function PasswordGenerator() {
             setPasswordLength={setPasswordLength}
           />
 
-          <Checkbox
-            label="Uppercase Letters"
-            field={{
-              name: 'includeUppercase',
-              value: includeUppercase,
-              onChange: () => setIncludeUppercase(!includeUppercase),
-            }}
-          />
-          <Checkbox
-            label="Lowercase Letters"
-            field={{
-              name: 'includeLowercase',
-              value: includeLowercase,
-              onChange: () => setIncludeLowercase(!includeLowercase),
-            }}
-          />
-          <Checkbox
-            label="Numbers"
-            field={{
-              name: 'includeNumbers',
-              value: includeNumbers,
-              onChange: () => setIncludeNumbers(!includeNumbers),
-            }}
-          />
-          <Checkbox
-            label="Special Characters"
-            field={{
-              name: 'includeSpecialCharacters',
-              value: includeSpecialCharacters,
-              onChange: () =>
-                setIncludeSpecialCharacters(!includeSpecialCharacters),
-            }}
-          />
+          <CheckBoxWrapper>
+            <Checkbox
+              label="Uppercase Letters"
+              field={{
+                name: 'includeUppercase',
+                value: includeUppercase,
+                onChange: () => setIncludeUppercase(!includeUppercase),
+              }}
+            />
+            <Checkbox
+              label="Lowercase Letters"
+              field={{
+                name: 'includeLowercase',
+                value: includeLowercase,
+                onChange: () => setIncludeLowercase(!includeLowercase),
+              }}
+            />
+            <Checkbox
+              label="Numbers"
+              field={{
+                name: 'includeNumbers',
+                value: includeNumbers,
+                onChange: () => setIncludeNumbers(!includeNumbers),
+              }}
+            />
+            <Checkbox
+              label="Special Characters"
+              field={{
+                name: 'includeSpecialCharacters',
+                value: includeSpecialCharacters,
+                onChange: () =>
+                  setIncludeSpecialCharacters(!includeSpecialCharacters),
+              }}
+            />
+          </CheckBoxWrapper>
           <PasswordStrength password={generatedPassword} />
           <ButtonGenerator onClick={handleGeneratePasswordClick} />
         </Form>
       </Formik>
       <ToastContainer />
-    </div>
+    </Wrapper>
   );
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import {
   StrengthSquare,
   StrengthSquaresContainer,
+  PasswordDescr,
+  Wrapper,
 } from './PasswordStrength.styled';
 
 export function PasswordStrength({ password }) {
@@ -36,8 +38,8 @@ export function PasswordStrength({ password }) {
   }
 
   return (
-    <div>
-      <p>Password Strength: {strength}</p>
+    <Wrapper>
+      <PasswordDescr>Strength: {strength}</PasswordDescr>
       <StrengthSquaresContainer>
         <StrengthSquare
           isFilled={level >= 1}
@@ -56,6 +58,6 @@ export function PasswordStrength({ password }) {
           fillColor={level >= 4 ? 'green' : 'transparent'}
         />
       </StrengthSquaresContainer>
-    </div>
+    </Wrapper>
   );
 }

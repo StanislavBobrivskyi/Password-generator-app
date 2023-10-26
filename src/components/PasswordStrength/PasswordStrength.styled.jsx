@@ -15,3 +15,23 @@ export const StrengthSquaresContainer = styled.div`
   display: flex;
   align-items: center;
 `;
+export const PasswordDescr = styled.div`
+  color: var(--Almost-White, #e6e5ea);
+  text-align: right;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  /* Heading (M) */
+  font-family: JetBrains Mono;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+export const Wrapper = styled.div`
+  width: 476px;
+  height: 72px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: transparent;
+`;
