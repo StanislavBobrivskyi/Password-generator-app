@@ -1,11 +1,12 @@
 import React from 'react';
+import { ButtonGenerat } from './ButtonGenerator.styled';
 
 export function ButtonGenerator({ onClick }) {
   return (
     <div>
-      <button type="button" onClick={onClick}>
+      <ButtonGenerat type="button" onClick={onClick}>
         Generate Password
-      </button>
+      </ButtonGenerat>
     </div>
   );
 }
