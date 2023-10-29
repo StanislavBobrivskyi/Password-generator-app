@@ -31,6 +31,7 @@ export const StyledInput = styled(Field)`
   font-feature-settings: 'clig' off, 'liga' off;
 
   /* Heading (L) */
+  width: 100%;
   font-family: JetBrains Mono;
   font-size: 32px;
   font-style: normal;
@@ -38,6 +39,9 @@ export const StyledInput = styled(Field)`
   line-height: normal;
   background-color: transparent;
   border: none;
+  &:hover {
+    border: none;
+  }
 `;
 
 export const CopyBtn = styled.button`

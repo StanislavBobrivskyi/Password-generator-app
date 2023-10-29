@@ -1,17 +1,21 @@
 import React from 'react';
-import { CheckBoxWrapper } from './Checkbox.styled';
+import {
+  CheckBoxWrapper,
+  CheckboxLabel,
+  CustomCheckbox,
+} from './Checkbox.styled';
 export function Checkbox({ label, field }) {
   return (
     <CheckBoxWrapper>
-      <label>
-        <input
+      <CheckboxLabel>
+        <CustomCheckbox
           type="checkbox"
           name={field.name}
           checked={field.value}
           onChange={field.onChange}
         />
         {label}
-      </label>
+      </CheckboxLabel>
     </CheckBoxWrapper>
   );
 }
