@@ -45,7 +45,7 @@ export const CopyBtn = styled.button`
   position: absolute;
   transform: translate(0, 0);
   top: 40%;
-  right: 10%;
+  right: 8%;
   padding: 0;
   width: 21px;
   height: 24px;

@@ -1,5 +1,10 @@
 import React from 'react';
-
+import {
+  LengthWrapper,
+  LengthLabel,
+  LengthSpan,
+  LangthInput,
+} from './PasswordLength.styled';
 export function PasswordLength({ passwordLength, setPasswordLength }) {
   const handleLengthChange = event => {
     const newLength = event.target.value;
@@ -7,15 +12,17 @@ export function PasswordLength({ passwordLength, setPasswordLength }) {
   };
 
   return (
-    <div>
-      <label>Password Length: {passwordLength}</label>
-      <input
+    <LengthWrapper>
+      <LengthLabel>
+        Character Length <LengthSpan> {passwordLength}</LengthSpan>
+      </LengthLabel>
+      <LangthInput
         type="range"
         min="8"
         max="16"
         value={passwordLength}
         onChange={handleLengthChange}
       />
-    </div>
+    </LengthWrapper>
   );
 }
