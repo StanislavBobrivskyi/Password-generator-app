@@ -21,3 +21,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.CopyBtn {
+  transform: scale(1);
+  transition: transform 0.3s ease; /* Додайте плавну анімацію зміни масштабу */
+}
+
+.CopyBtn.inactive {
+  transform: scale(0.9);
+}

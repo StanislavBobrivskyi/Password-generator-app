@@ -56,6 +56,8 @@ export const CopyBtn = styled.button`
   background: transparent;
   &:hover {
     color: #24232c;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
   }
 `;
 
