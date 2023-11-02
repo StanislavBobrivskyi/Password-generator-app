@@ -33,8 +33,6 @@ export const StartBtn = styled.button`
   &:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
-    border: 1px solid #53ffaa;
-    box-shadow: 0 0 10px #53ffaa; /* Додамо тінь при наведенні */
   }
   &:active {
     transform: scale(1.1);
