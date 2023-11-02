@@ -1,6 +1,6 @@
 # Interactive Password Generator App
 
-![App Screenshot]()
+![App Screenshot](/public/screanshoot.png)
 
 Welcome to the Interactive Password Generator App! This application is built
 using HTML, CSS, JavaScript, React, React components, and React hooks to create
@@ -56,7 +56,7 @@ Enjoy your secure and randomly generated password!
 
 ## App Screenshot
 
-![Generated Password](screenshot.png)
+![App Screenshot](/public/screanshoot.png)
 
 ## Author
 
