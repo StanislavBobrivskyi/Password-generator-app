@@ -73,7 +73,7 @@ export function PasswordGenerator() {
     const input = document.getElementById('password-input');
     input.select();
     document.execCommand('copy');
-    toast.success('Пароль скопійовано у буфер обміну');
+    toast.success('copied!');
   };
 
   return (
